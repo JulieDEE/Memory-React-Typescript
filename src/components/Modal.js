@@ -1,4 +1,4 @@
-import { Typography, Box, Button } from "@mui/material";
+import {  Button } from "@mui/material";
 
 const Modal = ({ setModal, startGame, title, subtitle }) => {
   const handleClick = () => {

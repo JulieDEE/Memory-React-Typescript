@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
-import LinearProgress, {
-  LinearProgressProps,
-} from "@mui/material/LinearProgress";
+import LinearProgress from "@mui/material/LinearProgress";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
@@ -33,11 +31,14 @@ LinearProgressWithLabel.propTypes = {
 const Counter = ({ progress, setProgress }: Props) => {
   useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress: any) => prevProgress < 0 ? 0 : prevProgress -1);
+      setProgress((prevProgress: any) =>
+        prevProgress < 0 ? 0 : prevProgress - 1
+      );
     }, 1000);
     return () => {
       clearInterval(timer);
     };
+    // eslint-disable-next-line
   }, [progress]);
 
   return (
