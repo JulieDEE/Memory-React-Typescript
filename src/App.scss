@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #393939;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23313131' fill-opacity='0.32'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.32'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #f0dc5e;
+  font-size: 60px;
+  text-align: center;
+}
+
+.start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+
+  h2 {
+    color: #f0dc5e;
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  p {
+    color: white;
+    max-width: 800px;
+    text-align: center;
+    margin-top: -10px;
+  }
+}
+
+.game-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-grid {
+  width: 700px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .card {
+    width: 145px;
+    height: 145px;
+    position: relative;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .front {
+      position: absolute;
+      transform: rotateY(90deg);
+      transition: all ease-in 0.2s;
+      border-radius: 10px;
+    }
+
+    .back {
+      transition: all ease-in 0.2s;
+      transition-delay: 0.2s;
+      border-radius: 10px;
+    }
+  }
+
+  .flipped {
+    .front {
+      transform: rotateY(0deg);
+      transition-delay: 0.2s;
+    }
+
+    .back {
+      transform: rotateY(90deg);
+      transition-delay: 0s;
+    }
+  }
+}
+
+// MODAL //
+
+.modal-bg {
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 50%;
+  z-index: 1;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+
+  .modal-container {
+    background-color: #393939;
+    border-radius: 20px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 120px;
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap : 10px;
+
+      .title {
+        font-size: 35px;
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.674);
+        margin-top: -10px;
+      }
+    }
+  }
+
+}
+
+.counter-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
